@@ -38,9 +38,6 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/login" element={<Login setRoles={setRoles} />} />
-          <Route exact path="/" element={
-            <PageLayout title={"Page Under Development"} children={<PageNotDone />} />
-          } />
           <Route element={<PrivateRoutes />}>
             <Route element={<AdminRoutes />}>
               <Route exact path="/users" element={
@@ -50,6 +47,9 @@ function App() {
                 <PageLayout title={"Roles"} children={<Roles />} />
               } />
             </Route>
+            <Route exact path="/" element={
+              <PageLayout title={"Page Under Development"} children={<PageNotDone />} />
+            } />
           </Route>
           <Route path="*" element={<InvalidPage />} />
         </Routes>
